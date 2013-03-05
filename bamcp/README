@@ -1,0 +1,65 @@
+*********************************************
+**
+**     README
+**   
+** Author: Arthur Guez aguez@gatsby.ucl.ac.uk
+*********************************************
+
+Bayesian RL framework containing:
+
+* Algorithms
+  BA-UCT (Guez, Silver, Dayan NIPS 2012) 
+  BAMCP  (Guez, Silver, Dayan NIPS 2012) 
+
+  Note: Implementation (and interpretation) is mine, do not trust for your research
+  without double-checking the code: 
+
+  BFS3   (Asmuth, Littman UAI 2011)
+  BOSS   (Asmuth et al. UAI 2009) 
+  SBOSS  (Castro, Precup KDD 2010)
+  BEB    (Kolter, Ng, 2009)
+
+
+* Samplers
+  
+  FDM: Flat Dirichlet Multinomial (independent for each state-action)
+  SFDM: Sparse Dirichlet Multinomial (independent for each state-action) (See Friedman, Singer NIPS 1999)
+
+* Environments
+
+ Random MDPs
+ Double-loop
+ Grids
+ Dearden Maze
+ Bernoulli Bandits
+
+  
+-----------------------------
+INSTALLATION
+-----------------------------
+
+cd build
+cmake ..
+make
+
+-----------------------------
+USAGE
+-----------------------------
+
+Some combination of parameters might fail without warning, you have to know what you are doing...
+
+Example usage 1. Run BA-UCT N=10 times on double-loop (ENV=3, S=9, A=2) with K=100 simulations per step for T=200 steps
+using the FDM sampler (FACT=1)
+
+./brl --ENV 3 --S 9 --A 2 --BAUCT --K 100 --T 200 --FACT 1 --N 10
+
+Example usage 2. Run BAMCP with gamma=0.96 on a 5x5 grid (ENV=1,S=25,A=4), MCTS exploration constant 5,
+lazy sparse dirichlet multinomial sampler (FACT=3), output in file exp_example2
+
+./brl --BAMCP --ENV 1 --S 25 --A 4 --gamma 0.96 --seed 10 --MCTSEC 5 --FACT 3 --K 1000 --N 1 --T 100 --f ../out/exp_example2 
+
+=> Check main.cpp for all parameter names and configurations.
+
+
+
+

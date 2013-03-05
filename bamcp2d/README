@@ -1,0 +1,20 @@
+Author: Arthur Guez
+aguez@gatsby.ucl.ac.uk
+
+Check paper Guez,Silver,Dayan NIPS 2012 for details.
+------------
+
+Implementation of the BAMCP algorithm for 2D domains with state attributes.
+
+Requires GLUT-glfw for graphics (Check CMakeLists.txt to disable graphics, set gx=0 there and remove --VIZ in the command below)
+
+* Install: 
+cd build
+cmake ..
+make
+
+Example usage for the Infinite grid (ENV=9, FACT=9) with Beta(1,2);Beta(2,1) prior for the column/row parameters.
+
+./brl --VIZ --gamma 0.97 --K 2000 --BAMCP2D --MCTSRM 2 --MCTSEC 5 --MCTSRT --ENV 9 --FACT 9 --BETAC0 1 --BETAC1 2 --BETAR0 2 --BETAR1 1 --T 200 --N 1
+
+
