@@ -38,6 +38,8 @@ Bayesian RL framework containing:
 INSTALLATION
 -----------------------------
 
+mkdir out
+mkdir build
 cd build
 cmake ..
 make

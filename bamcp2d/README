@@ -9,6 +9,9 @@ Implementation of the BAMCP algorithm for 2D domains with state attributes.
 Requires GLUT-glfw for graphics (Check CMakeLists.txt to disable graphics, set gx=0 there and remove --VIZ in the command below)
 
 * Install: 
+
+mkdir out
+mkdir build
 cd build
 cmake ..
 make
